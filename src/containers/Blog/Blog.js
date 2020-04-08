@@ -10,7 +10,8 @@ class Blog extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            posts: []
+            posts: [],
+            selectedPostId: null
         }
     }
 
@@ -31,6 +32,12 @@ class Blog extends Component {
             })
     }
 
+    postSelectedHandler = (id) => {
+        this.setState({
+            selectedPostId: id
+        })
+    }
+
     render () {
 
         const posts = this.state.posts.map(
@@ -38,7 +45,8 @@ class Blog extends Component {
                 return <Post 
                     key={post.id} 
                     title={post.title} 
-                    author={post.author} />
+                    author={post.author}
+                    clicked={() => this.postSelectedHandler(post.id)} />
             }
         )
 
@@ -48,7 +56,7 @@ class Blog extends Component {
                     {posts}
                 </section>
                 <section>
-                    <FullPost />
+                    <FullPost id={this.state.selectedPostId} />
                 </section>
                 <section>
                     <NewPost />
