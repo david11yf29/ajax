@@ -6,6 +6,11 @@ import NewPost from '../../components/NewPost/NewPost';
 import './Blog.css';
 
 class Blog extends Component {
+
+    componentDidMount() {
+        
+    }
+
     render () {
         return (
             <div>
