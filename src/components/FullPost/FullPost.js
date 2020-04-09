@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
 import axios from '../../axios';
-
+// cool
 import './FullPost.css';
 
 class FullPost extends Component {
@@ -9,7 +9,7 @@ class FullPost extends Component {
         super(props);
         this.state = {
             loadedPost: null
-        }
+        } 
     }
 
     componentDidUpdate() {
